@@ -75,6 +75,27 @@ public class VisualGato : MonoBehaviour
             Rigidbody rbp =p.AddComponent<Rigidbody>();
             rbp.isKinematic = true;
         }
+
+         //
+        List<Vector3> positions = LogicGato.GetLogic();
+
+        for (int i=0;i < positions.Count; i++)
+        {
+            float tableroX=(positions[i].x-1f)*celda;
+            float tableroZ=(positions[i].z-1f)*celda;
+            GameObject prefab;
+
+            if (i % 2 == 0)
+            {
+                prefab = Player1Prefab;
+            }
+            else
+            {
+                prefab = Player2Prefab;
+            }
+
+            GameObject ficha = Instantiate(prefab);
+            }
         
 
 
