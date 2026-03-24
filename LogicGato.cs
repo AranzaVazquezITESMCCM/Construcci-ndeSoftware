@@ -26,13 +26,14 @@ public class LogicGato
             
             if (Win(positions, player))
             {
+                Debug.Log("Gana jugador " + player);
                 break;
             }
         } 
     static bool Win(List<Vector3> positions, int player)
         {
             List<Vector3> game=new List<Vector3>();
-            for (int i=0;i<positions.Count; i+=2)
+            for (int i=player-1;i<positions.Count; i+=2)
                 game.Add(positions[i]);
             
             for (int n=0; n < 3; n++)
